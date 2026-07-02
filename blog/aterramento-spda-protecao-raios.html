@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Aterramento e SPDA: proteção real contra raios no campo · Blog SPODE</title>
+<meta name="description" content="O que é SPDA, por que silos e elevadores atraem raios, o que a NBR 5419 exige e por que a inspeção periódica vale tanto quanto a instalação.">
+<meta name="theme-color" content="#0A0C0F">
+<link rel="icon" href="../assets/logo-spode-icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--red:#FF2A22;--ink:#0A0C0F;--card:#12181F;--line:rgba(255,255,255,.09);--txt:#F4F7FA;--muted:#9AA6B2;--steel:#6B7682;--disp:'Anton',sans-serif;--head:'Oswald',sans-serif;--sans:'Inter',system-ui,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);color:var(--txt);background:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:50;background:rgba(10,12,15,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1240px;margin:0 auto;padding:0 32px}
+  .nav-in img{height:42px;display:block}
+  .blink{font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#c8d2dc;transition:color .2s}
+  .blink:hover{color:#fff}
+  .hero{position:relative;overflow:hidden}
+  .hero img{width:100%;height:46vh;min-height:320px;max-height:520px;object-fit:cover;display:block}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,15,.45) 0%,rgba(10,12,15,.15) 45%,var(--ink) 100%)}
+  .hero-t{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:36px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--red);box-shadow:0 0 10px var(--red)}
+  h1{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(28px,4.6vw,52px);line-height:1.02;color:#fff;letter-spacing:.005em;text-shadow:0 4px 40px rgba(0,0,0,.7);max-width:22ch}
+  .meta{margin-top:12px;font-family:var(--head);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#aeb8c2}
+  article{padding:54px 0 10px}
+  article p{color:#c4ced8;margin-bottom:20px;font-size:16.5px}
+  article h2{font-family:var(--head);text-transform:uppercase;font-weight:600;font-size:25px;line-height:1.15;color:#fff;margin:44px 0 16px;padding-left:16px;border-left:3px solid var(--red)}
+  article h3{font-family:var(--head);text-transform:uppercase;font-weight:600;font-size:18px;color:#fff;margin:28px 0 10px}
+  article ul,article ol{margin:0 0 20px 24px;color:#c4ced8;font-size:16px}
+  article li{margin-bottom:9px}
+  article strong{color:#fff;font-weight:600}
+  .note{border-left:3px solid var(--red);background:rgba(255,42,34,.07);padding:16px 20px;margin:28px 0;border-radius:0 10px 10px 0;color:#d5dde5;font-size:15px}
+  .cta{margin:54px 0 0;border:1px solid rgba(255,42,34,.35);background:linear-gradient(155deg,rgba(255,42,34,.13),rgba(255,42,34,.03));border-radius:14px;padding:36px 30px;text-align:center}
+  .cta h2{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(26px,4vw,40px);color:#fff;line-height:1}
+  .cta p{color:var(--muted);margin:14px auto 0;max-width:48ch;font-size:15.5px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:14px;padding:15px 30px;border-radius:4px;margin-top:24px;background:var(--red);color:#fff;box-shadow:0 12px 30px -10px rgba(255,42,34,.7);transition:transform .25s,box-shadow .25s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(255,42,34,.85)}
+  .btn svg{width:17px;height:17px}
+  footer{border-top:1px solid var(--line);margin-top:64px;padding:32px 0 38px;background:#070809}
+  footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+  footer p,footer a{font-family:var(--head);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+  footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-in">
+    <a href="../index.html"><img src="../assets/logo-spode-transparente-dark.png" alt="SPODE Soluções Elétricas"></a>
+    <nav style="display:flex;gap:26px"><a class="blink" href="index.html">Todos os artigos</a><a class="blink" href="../index.html">Site SPODE</a></nav>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="https://spode.ind.br/_assets/media/66b31ea6dac5c6c510803eecd6d48311.jpg" alt="Equipe de obra da SPODE com capacetes em serviço de campo" loading="lazy">
+  <div class="hero-t wrap">
+    <span class="eyebrow">Proteção</span>
+    <h1>Aterramento e SPDA: proteção real contra raios no campo</h1>
+    <div class="meta">Equipe SPODE · Julho de 2026 · Leitura de 5 minutos</div>
+  </div>
+</div>
+
+<main class="wrap">
+<article>
+  <p>O Brasil é um dos países com maior incidência de raios do mundo. E o campo reúne o cenário perfeito para o problema: áreas abertas, planas, com silos, elevadores e caixas de máquina se destacando na paisagem como o ponto mais alto num raio de quilômetros. Quando a nuvem carrega, a descarga procura o caminho mais curto para o solo. Sem proteção projetada, esse caminho pode passar pela sua estrutura, pelos seus equipamentos e, no pior cenário, pelas pessoas que trabalham ali.</p>
+  <p>Neste artigo, explicamos o que é o SPDA, por que as estruturas do agro são tão expostas, o que a NBR 5419 estabelece e por que a inspeção periódica importa tanto quanto a instalação inicial.</p>
+
+  <h2>O que é SPDA, em bom português</h2>
+  <p>SPDA é a sigla para Sistema de Proteção contra Descargas Atmosféricas. A ideia central é simples: em vez de deixar o raio escolher o caminho, o sistema oferece a ele uma rota controlada e segura até a terra. Um SPDA completo tem três partes que trabalham juntas:</p>
+  <ul>
+    <li><strong>Captação:</strong> os elementos no topo da estrutura, como captores e condutores no ponto mais alto, que recebem a descarga.</li>
+    <li><strong>Descida:</strong> os condutores que levam a corrente do topo até o solo por um trajeto definido em projeto.</li>
+    <li><strong>Aterramento:</strong> a malha de eletrodos enterrada que dispersa a energia na terra com segurança.</li>
+  </ul>
+  <p>Se qualquer uma dessas partes falha, o sistema inteiro perde a função. Um captor bem instalado com aterramento ruim apenas muda o lugar do estrago.</p>
+
+  <h3>SPDA não impede o raio, ele controla o trajeto</h3>
+  <p>Vale desfazer um mito comum: nenhum sistema atrai menos raios nem impede a descarga de acontecer. O que o SPDA faz é conduzir a corrente por onde ela não causa dano, protegendo a estrutura e reduzindo o risco para quem está dentro dela.</p>
+
+  <h2>Por que o agro é tão exposto</h2>
+  <p>Silos metálicos, elevadores de canecas, secadores e tulhas combinam três fatores que aumentam o risco: altura, material condutor e isolamento na paisagem. Uma unidade de armazenagem no meio da lavoura funciona, na prática, como um grande eletrodo apontado para o céu.</p>
+  <p>As consequências de uma descarga sem proteção adequada vão além do dano visível na estrutura:</p>
+  <ul>
+    <li>Queima de painéis, CLPs, sensores de termometria e sistemas de automação.</li>
+    <li>Faíscas em ambientes com pó de grão em suspensão, que é combustível.</li>
+    <li>Tensões perigosas se espalhando pelo solo e pelas massas metálicas, com risco direto para as pessoas.</li>
+    <li>Parada da operação em plena safra, com a fila de caminhões esperando na balança.</li>
+  </ul>
+  <div class="note">O raio nem precisa acertar a estrutura em cheio. Uma descarga próxima já induz surtos na rede elétrica e nas linhas de sinal, e é assim que muita eletrônica de automação queima sem que ninguém veja o raio cair.</div>
+
+  <h2>O que a NBR 5419 estabelece</h2>
+  <p>A NBR 5419 é a norma brasileira que rege a proteção contra descargas atmosféricas. Ela parte de uma análise de risco: avalia as dimensões da estrutura, a região, o uso, a ocupação e o que existe dentro dela para definir o nível de proteção exigido e o tipo de sistema a instalar.</p>
+  <p>Dessa análise saem as definições práticas do projeto: o posicionamento da captação, a quantidade e o trajeto das descidas, os requisitos da malha de aterramento e as medidas de proteção contra surtos para os equipamentos internos. Por isso não existe SPDA de catálogo: cada estrutura pede o seu, calculado e documentado por profissional habilitado.</p>
+
+  <h3>Aterramento é a base de tudo</h3>
+  <p>Além de fechar o circuito do SPDA, o aterramento cumpre um papel diário: dá referência segura para a instalação elétrica, permite que as proteções atuem corretamente e evita choques por contato com carcaças e estruturas metálicas. Malha mal executada ou corroída compromete a proteção contra raios e a segurança elétrica da unidade ao mesmo tempo.</p>
+
+  <h2>Inspeção periódica: a proteção envelhece</h2>
+  <p>O SPDA trabalha exposto a sol, chuva, corrosão e às próprias descargas que conduz. Conexões afrouxam, condutores se rompem, eletrodos se degradam no solo e reformas na estrutura alteram o cenário que o projeto original considerou. Um sistema instalado há anos e nunca inspecionado pode estar apenas decorando o telhado.</p>
+  <p>A inspeção periódica verifica a continuidade dos condutores, o estado das conexões e da captação, mede a resistência de aterramento e confere se a estrutura mudou desde o projeto. Também gera a documentação que comprova a conformidade do sistema, cada vez mais cobrada em auditorias, seguros e fiscalizações.</p>
+  <p>Um bom hábito é tratar a inspeção do SPDA como se trata a revisão do maquinário: agenda fixa, de preferência antes do período de chuvas, e sempre após qualquer descarga que tenha atingido a estrutura.</p>
+
+  <h2>Por onde começar</h2>
+  <p>Se a sua unidade nunca passou por uma análise de risco, esse é o primeiro passo. Se já existe SPDA instalado, a pergunta certa é outra: quando foi a última inspeção documentada? A SPODE projeta, executa e inspeciona sistemas de aterramento e SPDA para o agronegócio e a indústria, com projetos assinados por engenheiros habilitados e equipe própria nas principais regiões produtoras do país.</p>
+</article>
+
+<div class="cta">
+  <h2>Fale com um consultor SPODE</h2>
+  <p>Conte como é a sua estrutura e receba uma orientação direta sobre proteção contra raios e aterramento para a sua operação.</p>
+  <a class="btn" href="https://wa.me/5555996027332" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.8 1.9.8 2 .1.1.1.3 0 .5-.3.6-.7.9-.5 1.2.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.2.5.2.6.4 0 .2 0 .8-.2 1.4Z"/></svg>Chamar no WhatsApp</a>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Equipe SPODE · julho 2026</p>
+    <a href="index.html">Voltar ao blog</a>
+  </div>
+</footer>
+
+</body>
+</html>

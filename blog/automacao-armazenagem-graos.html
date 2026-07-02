@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Automação de unidades de armazenagem: menos falha humana, mais grão protegido · Blog SPODE</title>
+<meta name="description" content="CLP, IHM, supervisório, sensores e termometria: como a automação tira a operação de armazenagem do improviso e protege o grão armazenado o ano inteiro.">
+<meta name="theme-color" content="#0A0C0F">
+<link rel="icon" href="../assets/logo-spode-icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--red:#FF2A22;--ink:#0A0C0F;--card:#12181F;--line:rgba(255,255,255,.09);--txt:#F4F7FA;--muted:#9AA6B2;--steel:#6B7682;--disp:'Anton',sans-serif;--head:'Oswald',sans-serif;--sans:'Inter',system-ui,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);color:var(--txt);background:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:50;background:rgba(10,12,15,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1240px;margin:0 auto;padding:0 32px}
+  .nav-in img{height:42px;display:block}
+  .blink{font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#c8d2dc;transition:color .2s}
+  .blink:hover{color:#fff}
+  .hero{position:relative;overflow:hidden}
+  .hero img{width:100%;height:46vh;min-height:320px;max-height:520px;object-fit:cover;display:block}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,15,.45) 0%,rgba(10,12,15,.15) 45%,var(--ink) 100%)}
+  .hero-t{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:36px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--red);box-shadow:0 0 10px var(--red)}
+  h1{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(28px,4.6vw,52px);line-height:1.02;color:#fff;letter-spacing:.005em;text-shadow:0 4px 40px rgba(0,0,0,.7);max-width:22ch}
+  .meta{margin-top:12px;font-family:var(--head);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#aeb8c2}
+  article{padding:54px 0 10px}
+  article p{color:#c4ced8;margin-bottom:20px;font-size:16.5px}
+  article h2{font-family:var(--head);text-transform:uppercase;font-weight:600;font-size:25px;line-height:1.15;color:#fff;margin:44px 0 16px;padding-left:16px;border-left:3px solid var(--red)}
+  article h3{font-family:var(--head);text-transform:uppercase;font-weight:600;font-size:18px;color:#fff;margin:28px 0 10px}
+  article ul,article ol{margin:0 0 20px 24px;color:#c4ced8;font-size:16px}
+  article li{margin-bottom:9px}
+  article strong{color:#fff;font-weight:600}
+  .note{border-left:3px solid var(--red);background:rgba(255,42,34,.07);padding:16px 20px;margin:28px 0;border-radius:0 10px 10px 0;color:#d5dde5;font-size:15px}
+  .cta{margin:54px 0 0;border:1px solid rgba(255,42,34,.35);background:linear-gradient(155deg,rgba(255,42,34,.13),rgba(255,42,34,.03));border-radius:14px;padding:36px 30px;text-align:center}
+  .cta h2{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(26px,4vw,40px);color:#fff;line-height:1}
+  .cta p{color:var(--muted);margin:14px auto 0;max-width:48ch;font-size:15.5px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:14px;padding:15px 30px;border-radius:4px;margin-top:24px;background:var(--red);color:#fff;box-shadow:0 12px 30px -10px rgba(255,42,34,.7);transition:transform .25s,box-shadow .25s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(255,42,34,.85)}
+  .btn svg{width:17px;height:17px}
+  footer{border-top:1px solid var(--line);margin-top:64px;padding:32px 0 38px;background:#070809}
+  footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+  footer p,footer a{font-family:var(--head);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+  footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-in">
+    <a href="../index.html"><img src="../assets/logo-spode-transparente-dark.png" alt="SPODE Soluções Elétricas"></a>
+    <nav style="display:flex;gap:26px"><a class="blink" href="index.html">Todos os artigos</a><a class="blink" href="../index.html">Site SPODE</a></nav>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="https://spode.ind.br/_assets/video/405268cd73edeb0d49ab10dda3c86f61.jpg" alt="Fachada da filial da SPODE em Sorriso com a frota adesivada" loading="lazy">
+  <div class="hero-t wrap">
+    <span class="eyebrow">Automação</span>
+    <h1>Automação de unidades de armazenagem: menos falha humana, mais grão protegido</h1>
+    <div class="meta">Equipe SPODE · Julho de 2026 · Leitura de 5 minutos</div>
+  </div>
+</div>
+
+<main class="wrap">
+<article>
+  <p>Depois que a colheita entra no silo, muita gente considera o trabalho terminado. Quem opera armazenagem sabe que é o contrário: ali começa uma vigília de meses. Temperatura, umidade, aeração, movimentação: tudo precisa acontecer na hora certa, e boa parte das perdas de grão armazenado nasce de uma decisão tomada tarde demais ou de um botão acionado na sequência errada.</p>
+  <p>A automação existe para tirar essas decisões do improviso. Neste artigo, explicamos o que compõe a automação de uma unidade de armazenagem e o que ela muda no dia a dia de quem opera e de quem gerencia.</p>
+
+  <h2>Onde a falha humana custa grão</h2>
+  <p>Sem automação, a operação depende da atenção contínua de poucas pessoas. E os erros clássicos se repetem em qualquer região do país:</p>
+  <ul>
+    <li>Aeração ligada no momento errado, empurrando ar úmido ou quente para dentro da massa de grãos.</li>
+    <li>Foco de aquecimento descoberto tarde, quando a deterioração já se espalhou pela célula.</li>
+    <li>Transportadores partindo fora de sequência, com embuchamento e quebra de equipamento.</li>
+    <li>Silo carregado além do nível seguro por falta de leitura confiável.</li>
+  </ul>
+  <p>Nenhum desses erros nasce de má vontade. Nasce de pedir que pessoas monitorem, de memória e no olho, um sistema grande demais para isso.</p>
+
+  <h2>Os blocos que formam a automação</h2>
+
+  <h3>CLP: o cérebro da unidade</h3>
+  <p>O CLP, controlador lógico programável, é um computador industrial feito para operar em ambiente severo, com poeira, calor e vibração. Ele lê os sensores, executa a lógica de controle e comanda motores e válvulas. É no CLP que ficam gravadas as regras da unidade: quando ligar a aeração, em que ordem partir os transportadores, o que fazer quando uma leitura sai da faixa segura.</p>
+
+  <h3>IHM e supervisório: os olhos da operação</h3>
+  <p>A IHM, interface homem-máquina, é a tela junto ao painel onde o operador comanda e acompanha o processo no local. O supervisório amplia essa visão: em um computador, ele mostra a unidade inteira, registra histórico, gera alarmes e permite acompanhar tendências ao longo das semanas. O gestor deixa de depender do relato de quem estava no turno e passa a decidir sobre dados registrados.</p>
+
+  <h3>Sensores: temperatura, nível e umidade</h3>
+  <p>Sensores de nível informam quanto grão existe em cada célula e evitam sobrecarga. Sensores de temperatura e de umidade do ar alimentam as decisões de aeração. É essa camada de medição que transforma o silo, antes uma caixa fechada, em um ambiente monitorado de verdade.</p>
+
+  <h2>Termometria: o seguro da massa de grãos</h2>
+  <p>A termometria merece destaque próprio. Cabos com sensores distribuídos dentro do silo medem a temperatura em vários pontos da massa de grãos. Grão em processo de deterioração esquenta, e esse calor aparece na leitura antes de virar perda visível ou cheiro de armazém.</p>
+  <p>Integrada ao sistema de automação, a termometria dispara alarmes e orienta a aeração automática, que passa a ligar quando as condições do ar favorecem a conservação, e não quando alguém lembra de acionar o ventilador.</p>
+  <div class="note">Grão armazenado é capital parado dentro de uma estrutura metálica. A termometria é a forma mais direta de enxergar o que acontece dentro dessa estrutura antes que o prejuízo apareça.</div>
+
+  <h2>Intertravamento: a sequência certa, sempre</h2>
+  <p>Em uma unidade, os equipamentos formam rotas: moega, transportador, elevador, secador, silo. O intertravamento garante que uma rota só parte na ordem correta e que, se um equipamento falha no meio do caminho, os anteriores param antes de embuchar o sistema. É proteção para a máquina e para quem está por perto. Essa lógica, programada no CLP, elimina uma das fontes mais comuns de quebra em unidades operadas manualmente.</p>
+
+  <h2>Start-up assistido: a virada com acompanhamento</h2>
+  <p>Automatizar não é apenas instalar equipamentos. A virada de uma operação manual para uma automatizada exige comissionamento, testes com carga real e treinamento da equipe. No start-up assistido, os técnicos que programaram o sistema acompanham as primeiras operações lado a lado com os operadores, ajustando parâmetros com a unidade rodando de verdade.</p>
+  <p>Essa etapa faz diferença dupla: o sistema sai calibrado para a realidade da unidade, e a equipe ganha confiança no que está operando. Automação bem implantada é aceita pela equipe; automação jogada na mão do operador sem treinamento vira sistema desligado no primeiro susto.</p>
+
+  <h2>O resultado na prática</h2>
+  <p>Unidade automatizada não significa unidade sem gente. Significa gente decidindo com informação, e rotina crítica executada por um sistema que não esquece, não se distrai e não pula etapa. O resultado aparece em grão conservado, equipamento durando mais e operação que não depende da memória de uma única pessoa.</p>
+  <p>A SPODE projeta e implanta automação para unidades de armazenagem e indústrias, com CLP, IHM, supervisório, termometria e start-up assistido pela própria equipe que desenvolve o sistema.</p>
+</article>
+
+<div class="cta">
+  <h2>Fale com um consultor SPODE</h2>
+  <p>Conte como funciona a sua unidade hoje e descubra por onde a automação começa a proteger o seu grão.</p>
+  <a class="btn" href="https://wa.me/5555996027332" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.8 1.9.8 2 .1.1.1.3 0 .5-.3.6-.7.9-.5 1.2.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.2.5.2.6.4 0 .2 0 .8-.2 1.4Z"/></svg>Chamar no WhatsApp</a>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Equipe SPODE · julho 2026</p>
+    <a href="index.html">Voltar ao blog</a>
+  </div>
+</footer>
+
+</body>
+</html>

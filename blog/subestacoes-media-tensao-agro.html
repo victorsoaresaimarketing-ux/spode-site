@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Subestações e média tensão no agro: o que sua unidade precisa saber · Blog SPODE</title>
+<meta name="description" content="Quando a subestação própria vira necessidade, como dimensionar em kVA, como funciona a medição no grupo A e o caminho de aprovação na concessionária.">
+<meta name="theme-color" content="#0A0C0F">
+<link rel="icon" href="../assets/logo-spode-icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--red:#FF2A22;--ink:#0A0C0F;--card:#12181F;--line:rgba(255,255,255,.09);--txt:#F4F7FA;--muted:#9AA6B2;--steel:#6B7682;--disp:'Anton',sans-serif;--head:'Oswald',sans-serif;--sans:'Inter',system-ui,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:var(--sans);color:var(--txt);background:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:50;background:rgba(10,12,15,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;max-width:1240px;margin:0 auto;padding:0 32px}
+  .nav-in img{height:42px;display:block}
+  .blink{font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#c8d2dc;transition:color .2s}
+  .blink:hover{color:#fff}
+  .hero{position:relative;overflow:hidden}
+  .hero img{width:100%;height:46vh;min-height:320px;max-height:520px;object-fit:cover;display:block}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,12,15,.45) 0%,rgba(10,12,15,.15) 45%,var(--ink) 100%)}
+  .hero-t{position:absolute;left:0;right:0;bottom:0;z-index:2;padding-bottom:36px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--red);box-shadow:0 0 10px var(--red)}
+  h1{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(28px,4.6vw,52px);line-height:1.02;color:#fff;letter-spacing:.005em;text-shadow:0 4px 40px rgba(0,0,0,.7);max-width:22ch}
+  .meta{margin-top:12px;font-family:var(--head);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:#aeb8c2}
+  article{padding:54px 0 10px}
+  article p{color:#c4ced8;margin-bottom:20px;font-size:16.5px}
+  article h2{font-family:var(--head);text-transform:uppercase;font-weight:600;font-size:25px;line-height:1.15;color:#fff;margin:44px 0 16px;padding-left:16px;border-left:3px solid var(--red)}
+  article h3{font-family:var(--head);text-transform:uppercase;font-weight:600;font-size:18px;color:#fff;margin:28px 0 10px}
+  article ul,article ol{margin:0 0 20px 24px;color:#c4ced8;font-size:16px}
+  article li{margin-bottom:9px}
+  article strong{color:#fff;font-weight:600}
+  .note{border-left:3px solid var(--red);background:rgba(255,42,34,.07);padding:16px 20px;margin:28px 0;border-radius:0 10px 10px 0;color:#d5dde5;font-size:15px}
+  .cta{margin:54px 0 0;border:1px solid rgba(255,42,34,.35);background:linear-gradient(155deg,rgba(255,42,34,.13),rgba(255,42,34,.03));border-radius:14px;padding:36px 30px;text-align:center}
+  .cta h2{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(26px,4vw,40px);color:#fff;line-height:1}
+  .cta p{color:var(--muted);margin:14px auto 0;max-width:48ch;font-size:15.5px}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:14px;padding:15px 30px;border-radius:4px;margin-top:24px;background:var(--red);color:#fff;box-shadow:0 12px 30px -10px rgba(255,42,34,.7);transition:transform .25s,box-shadow .25s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(255,42,34,.85)}
+  .btn svg{width:17px;height:17px}
+  footer{border-top:1px solid var(--line);margin-top:64px;padding:32px 0 38px;background:#070809}
+  footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center}
+  footer p,footer a{font-family:var(--head);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+  footer a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-in">
+    <a href="../index.html"><img src="../assets/logo-spode-transparente-dark.png" alt="SPODE Soluções Elétricas"></a>
+    <nav style="display:flex;gap:26px"><a class="blink" href="index.html">Todos os artigos</a><a class="blink" href="../index.html">Site SPODE</a></nav>
+  </div>
+</header>
+
+<div class="hero">
+  <img src="https://spode.ind.br/_assets/media/2af212c70c0ddf74741c0d78e6d5d720.jpg" alt="Técnicos do time de campo da SPODE em atendimento" loading="lazy">
+  <div class="hero-t wrap">
+    <span class="eyebrow">Média tensão</span>
+    <h1>Subestações e média tensão no agro: o que sua unidade precisa saber</h1>
+    <div class="meta">Equipe SPODE · Julho de 2026 · Leitura de 5 minutos</div>
+  </div>
+</div>
+
+<main class="wrap">
+<article>
+  <p>A fazenda cresceu. O secador ficou maior, a irrigação ganhou mais um pivô, o barracão virou unidade de beneficiamento. E a energia, que antes era um detalhe da operação, virou assunto de reunião. Em algum momento dessa curva de crescimento, quase toda unidade rural ou industrial se depara com a mesma pergunta: chegou a hora de ter uma subestação própria?</p>
+  <p>Neste artigo, explicamos em linguagem direta quando a subestação se torna necessária, o que significa dimensionar em kVA, como funciona a medição em média tensão e o que esperar do processo de aprovação na concessionária.</p>
+
+  <h2>O que é uma subestação e para que ela serve</h2>
+  <p>A energia que percorre as linhas da concessionária chega em média tensão, tipicamente entre 13,8 kV e 34,5 kV, dependendo da região. Nenhum motor, secador ou sistema de aeração trabalha nesse nível. A subestação é o conjunto de equipamentos que recebe essa energia e a transforma para a tensão de uso da unidade, em geral 220 V, 380 V ou 440 V.</p>
+  <p>Ela reúne o transformador, os equipamentos de proteção e manobra, o conjunto de medição e o aterramento. Em resumo: é a porta de entrada de energia da sua operação. Se essa porta é estreita ou mal construída, tudo o que está depois dela sofre junto.</p>
+
+  <h2>Quando a subestação própria vira necessidade</h2>
+  <p>Não existe um número único que valha para o Brasil inteiro, porque cada distribuidora define seus limites em norma própria. A lógica, porém, é parecida em todo lugar: consumidores de pequeno porte são atendidos em baixa tensão, direto da rede. Quando a carga instalada passa de determinado patamar, a concessionária passa a exigir atendimento em média tensão, com subestação do próprio consumidor.</p>
+  <p>Alguns sinais práticos de que sua unidade está chegando nesse ponto:</p>
+  <ul>
+    <li>A carga instalada cresceu com secadores, aeração, elevadores ou irrigação.</li>
+    <li>Máquinas de maior porte estão no plano de expansão dos próximos anos.</li>
+    <li>A rede atual sofre com queda de tensão e desligamentos nos horários de maior uso.</li>
+    <li>A própria concessionária já sinalizou limite de fornecimento no seu ponto.</li>
+  </ul>
+  <p>Nesses casos, a subestação deixa de ser escolha e vira condição para crescer.</p>
+
+  <h2>kVA: o número que define o tamanho do seu fornecimento</h2>
+  <p>O transformador da subestação é especificado em kVA, a potência aparente. É comum encontrá-lo em valores como 75, 112,5, 150, 225, 300 e 500 kVA, entre outros. Definir esse número exige um levantamento de cargas sério: quais motores existem, quais operam ao mesmo tempo, qual a corrente de partida de cada um e o que só entra em operação na safra.</p>
+  <p>Dois erros aparecem com frequência nesse processo:</p>
+  <ul>
+    <li><strong>Superdimensionar por medo:</strong> somar toda a potência instalada e comprar um transformador muito acima da demanda real, que trabalha ocioso e custa caro na compra e na operação.</li>
+    <li><strong>Olhar só para hoje:</strong> dimensionar para a operação atual e esquecer a expansão, o que obriga a trocar o transformador poucos anos depois.</li>
+  </ul>
+  <p>O dimensionamento correto considera a demanda real, a simultaneidade das cargas, as partidas de motores e uma folga planejada para o crescimento da unidade.</p>
+
+  <h2>Medição e demanda contratada</h2>
+  <p>Quem é atendido em média tensão entra no chamado grupo A de tarifação. Nesse grupo, a fatura tem duas partes: o consumo, medido em kWh, e a demanda contratada, medida em kW. A demanda funciona como uma reserva de capacidade: você contrata um valor junto à concessionária e paga por ele todos os meses.</p>
+  <p>Se a operação ultrapassa a demanda contratada além da tolerância, vem cobrança adicional. Se contrata demais, paga por capacidade que não usa. Por isso a medição importa tanto: o conjunto de medição fica na subestação, segue o padrão da distribuidora e é a base de tudo o que você paga.</p>
+
+  <h2>Aprovação na concessionária: como funciona o caminho</h2>
+  <p>Subestação não se liga por conta própria. O caminho passa por etapas definidas pela distribuidora local:</p>
+  <ol>
+    <li>Consulta e solicitação de acesso, informando a carga pretendida.</li>
+    <li>Projeto elétrico elaborado por engenheiro habilitado, com emissão de ART.</li>
+    <li>Análise e aprovação do projeto pela concessionária, conforme as normas técnicas dela.</li>
+    <li>Execução da obra seguindo fielmente o projeto aprovado.</li>
+    <li>Vistoria, comissionamento e ligação.</li>
+  </ol>
+  <p>Cada distribuidora tem seus padrões e seus fluxos. Um projeto que já nasce dentro da norma da concessionária evita as idas e vindas que mais atrasam a ligação.</p>
+
+  <h2>O custo real de subdimensionar</h2>
+  <p>Economizar no dimensionamento costuma sair caro. Um transformador que trabalha no limite aquece além do projetado e perde vida útil. A queda de tensão castiga os motores na partida, desarma proteções e queima equipamentos. Na safra, um desligamento na hora errada pode parar secador e aeração com grão úmido dentro do silo, e esse prejuízo ninguém devolve.</p>
+  <div class="note">Ampliar uma subestação subdimensionada quase sempre custa mais do que teria custado dimensionar corretamente na primeira vez. A conta barata do início vira a conta cara do meio do caminho.</div>
+
+  <h2>Por onde começar</h2>
+  <p>O primeiro passo é enxergar a sua realidade: levantamento das cargas existentes, plano de expansão e histórico de faturas. Com isso em mãos, dá para definir a potência do transformador, o tipo de subestação mais adequado ao terreno e à operação, e iniciar o processo junto à concessionária com o pé direito.</p>
+  <p>A SPODE projeta e executa subestações e soluções de média tensão para o agronegócio e a indústria, com projetos assinados por engenheiros habilitados, emissão de ART e registro no CREA, além de equipe própria nas principais regiões produtoras do país.</p>
+</article>
+
+<div class="cta">
+  <h2>Fale com um consultor SPODE</h2>
+  <p>Conte como é a sua operação e receba uma orientação direta de quem projeta e liga subestações no agro todos os dias.</p>
+  <a class="btn" href="https://wa.me/5555996027332" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.6-2.6-1.1-4.3-3.8-4.4-4-.1-.2-1.1-1.4-1.1-2.7 0-1.3.7-1.9.9-2.2.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.8 1.9.8 2 .1.1.1.3 0 .5-.3.6-.7.9-.5 1.2.7 1.2 1.6 2 2.8 2.6.3.2.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.4-.2.7-.1.3.1 1.8.9 2.1 1 .3.2.5.2.6.4 0 .2 0 .8-.2 1.4Z"/></svg>Chamar no WhatsApp</a>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Equipe SPODE · julho 2026</p>
+    <a href="index.html">Voltar ao blog</a>
+  </div>
+</footer>
+
+</body>
+</html>
