@@ -34,6 +34,8 @@ header.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,12
 @media(max-width:880px){.nav-links{display:none}}
 .hero-s{position:relative;padding:190px 0 90px;overflow:hidden}
 .hero-s::before{content:"";position:absolute;right:-10%;top:-30%;width:70%;height:160%;background:radial-gradient(circle,rgba(255,42,34,.16),transparent 65%);pointer-events:none}
+#spark{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero-s .wrap{position:relative;z-index:2}
 .hero-s .nb{font-family:var(--disp);font-size:clamp(60px,10vw,130px);line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.18);display:block;margin-bottom:14px}
 .hero-s h1{font-family:var(--disp);text-transform:uppercase;font-weight:400;font-size:clamp(40px,6.6vw,92px);line-height:.92;color:#fff;max-width:14ch}
 .hero-s h1 .r{color:var(--red);text-shadow:0 0 40px rgba(255,42,34,.5)}
@@ -81,6 +83,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;background:#070809}
 <a href="https://wa.me/5555996027332" target="_blank" rel="noopener" class="btn btn-red">Faça seu orçamento</a>
 </div></header>
 <section class="hero-s">
+<canvas id="spark"></canvas>
 <div class="wrap">
 <p class="crumbs"><a href="../index.html">Início</a> · <a href="../index.html#solucoes">Soluções</a> · Projetos Elétricos</p>
 <span class="nb">05</span>
@@ -135,5 +138,62 @@ footer{border-top:1px solid var(--line);padding:44px 0;background:#070809}
 <p>© 2026 Spode Soluções Elétricas · Sua empresa, nossa energia</p>
 </div>
 </footer>
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cv=document.getElementById('spark'); if(!cv) return;
+  var ctx=cv.getContext('2d'),W,H,DPR,cx,cy,R;
+  function size(){DPR=Math.min(devicePixelRatio||1,2);W=cv.width=cv.offsetWidth*DPR;H=cv.height=cv.offsetHeight*DPR;cx=W*0.72;cy=H*0.5;R=Math.min(W,H)*0.26;}
+  size();addEventListener('resize',size);
+  var t=1.618;
+  var V=[[-1,t,0],[1,t,0],[-1,-t,0],[1,-t,0],[0,-1,t],[0,1,t],[0,-1,-t],[0,1,-t],[t,0,-1],[t,0,1],[-t,0,-1],[-t,0,1]];
+  var E=[]; for(var i=0;i<12;i++)for(var j=i+1;j<12;j++){var dx=V[i][0]-V[j][0],dy=V[i][1]-V[j][1],dz=V[i][2]-V[j][2];var d2=dx*dx+dy*dy+dz*dz;if(d2>3.6&&d2<4.4)E.push([i,j]);}
+  function rotY(p,a){var c=Math.cos(a),s=Math.sin(a);return[p[0]*c+p[2]*s,p[1],-p[0]*s+p[2]*c];}
+  function rotX(p,a){var c=Math.cos(a),s=Math.sin(a);return[p[0],p[1]*c-p[2]*s,p[1]*s+p[2]*c];}
+  function proj(p){var f=4.2;var z=p[2]+5.2;var s=f/(z);return[cx+p[0]*R*s,cy+p[1]*R*s,p[2]];}
+  var bolts=[],nextBolt=60;
+  function makeBolt(){
+    var sx=cx+(Math.random()-.5)*W*0.5, sy=0;
+    var ex=cx+(Math.random()-.5)*R*1.2, ey=cy+(Math.random()-.5)*R*0.6;
+    var pts=[[sx,sy]],n=10;
+    for(var k=1;k<n;k++){var tt=k/n;var x=sx+(ex-sx)*tt+(Math.random()-.5)*70*DPR*(1-Math.abs(tt-.5));var y=sy+(ey-sy)*tt;pts.push([x,y]);}
+    pts.push([ex,ey]);
+    bolts.push({pts:pts,life:1});
+  }
+  var emb=[];for(var e2=0;e2<36;e2++)emb.push({x:Math.random()*W,y:Math.random()*H,r:(Math.random()*1.6+.4)*DPR,s:(Math.random()*.5+.15)*DPR,ph:Math.random()*6.28});
+  var ang=0,flash=0,raf=null;
+  function frame(){
+    ctx.clearRect(0,0,W,H);
+    var g=ctx.createRadialGradient(cx,cy,0,cx,cy,R*3.4);
+    g.addColorStop(0,'rgba(255,42,34,'+(0.14+flash*0.4)+')');g.addColorStop(.5,'rgba(255,42,34,.05)');g.addColorStop(1,'rgba(255,42,34,0)');
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    for(var b=0;b<emb.length;b++){var p=emb[b];p.y-=p.s;p.x+=Math.sin(p.y*0.01+p.ph)*.3*DPR;if(p.y<-6){p.y=H+6;p.x=Math.random()*W;}
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,6.28);ctx.fillStyle='rgba(255,106,61,'+(0.12+p.r/(2*DPR)*0.2)+')';ctx.fill();}
+    ang+=0.0045;
+    var P=V.map(function(v){return proj(rotX(rotY(v,ang),ang*0.45));});
+    ctx.lineWidth=1.3*DPR;
+    for(var ei=0;ei<E.length;ei++){var a=P[E[ei][0]],b2=P[E[ei][1]];var depth=(a[2]+b2[2])/2;var al=0.22+(depth+1.9)/3.8*0.6;
+      ctx.strokeStyle='rgba(255,'+Math.round(70+depth*40)+','+Math.round(60+depth*30)+','+al.toFixed(3)+')';
+      ctx.shadowColor='rgba(255,42,34,.8)';ctx.shadowBlur=(6+depth*5)*DPR;
+      ctx.beginPath();ctx.moveTo(a[0],a[1]);ctx.lineTo(b2[0],b2[1]);ctx.stroke();}
+    ctx.shadowBlur=0;
+    for(var ni=0;ni<P.length;ni++){var d=P[ni][2];var rr=(1.6+(d+1.9)/3.8*2.4)*DPR;
+      ctx.beginPath();ctx.arc(P[ni][0],P[ni][1],rr,0,6.28);ctx.fillStyle=d>0.4?'#fff':'rgba(255,140,120,.9)';
+      ctx.shadowColor='#FF2A22';ctx.shadowBlur=10*DPR;ctx.fill();}
+    ctx.shadowBlur=0;
+    if(--nextBolt<=0){makeBolt();flash=1;nextBolt=80+Math.random()*150;}
+    for(var bi=bolts.length-1;bi>=0;bi--){var bo=bolts[bi];bo.life-=0.06;if(bo.life<=0){bolts.splice(bi,1);continue;}
+      ctx.lineCap='round';
+      ctx.strokeStyle='rgba(255,'+(120+Math.round(bo.life*120))+',110,'+bo.life+')';ctx.shadowColor='#FF2A22';ctx.shadowBlur=18*DPR;ctx.lineWidth=(2.4*bo.life+0.6)*DPR;
+      ctx.beginPath();ctx.moveTo(bo.pts[0][0],bo.pts[0][1]);for(var pp=1;pp<bo.pts.length;pp++)ctx.lineTo(bo.pts[pp][0],bo.pts[pp][1]);ctx.stroke();
+      ctx.strokeStyle='rgba(255,255,255,'+(bo.life*0.9)+')';ctx.shadowBlur=8*DPR;ctx.lineWidth=(1.1*bo.life+0.3)*DPR;ctx.stroke();
+    }
+    ctx.shadowBlur=0;
+    if(flash>0)flash-=0.08;
+    raf=requestAnimationFrame(frame);
+  }
+  if(!reduce){var play=function(){if(!raf)raf=requestAnimationFrame(frame);},stop=function(){if(raf){cancelAnimationFrame(raf);raf=null;}};document.addEventListener('visibilitychange',function(){document.hidden?stop():play();});play();}
+})();
+</script>
 </body>
 </html>
