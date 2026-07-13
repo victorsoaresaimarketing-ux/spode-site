@@ -35,7 +35,7 @@
   header.nav.solid{background:rgba(10,12,15,.78);backdrop-filter:blur(16px);border-bottom-color:var(--line)}
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:80px}
   .logo{display:flex;align-items:center;gap:10px}
-  .logo img{height:48px;display:block}
+  .logo img{height:64px;display:block}
   .nav-links{display:flex;align-items:center;gap:34px}
   .nav-links a{font-family:var(--head);font-size:13px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:#c8d2dc;transition:color .2s}
   .nav-links a:hover{color:#fff}
@@ -53,7 +53,7 @@
   .hero::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(10,12,15,.5) 0%,transparent 22% 60%,var(--ink) 100%)}
   .hero-in{position:relative;z-index:3;width:100%}
   .hero .kick{color:#ff9d8f}
-  .hero h1{font-family:var(--disp);font-size:clamp(62px,15vw,200px);line-height:.84;color:#fff;letter-spacing:.005em;text-shadow:0 4px 60px rgba(0,0,0,.6)}
+  .hero h1{font-family:var(--disp);font-size:clamp(48px,11vw,150px);line-height:.84;color:#fff;letter-spacing:.005em;text-shadow:0 4px 60px rgba(0,0,0,.6)}
   .hero h1 .en{display:block;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.32)}
   .hero h1 .en b{font-weight:400;color:var(--red);-webkit-text-stroke:0;text-shadow:0 0 50px rgba(255,42,34,.7)}
   .hero .lead{font-size:clamp(16px,1.7vw,19px);color:#bcc6d0;max-width:440px;margin:30px 0 0}
@@ -137,7 +137,7 @@
 
   footer{border-top:1px solid var(--line);padding:56px 0 40px;background:#070809}
   .ft-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;padding-bottom:34px;border-bottom:1px solid var(--line)}
-  .ft-top img{height:36px}
+  .ft-top img{height:46px}
   .ft-c{font-size:13.5px;line-height:1.9;color:var(--muted)}
   .ft-c b{display:block;font-family:var(--head);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin-bottom:10px}
   .ft-bot{padding-top:24px;font-family:var(--head);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel)}
@@ -210,6 +210,21 @@
   @media(max-width:1000px){.blog-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:560px){.blog-grid{grid-template-columns:1fr}}
 
+  /* contatos */
+  .cts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:54px;text-align:left;position:relative}
+  .ctc{border:1px solid var(--line);border-radius:12px;padding:22px 20px;background:var(--card)}
+  .ctc .role{font-family:var(--head);font-size:10.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+  .ctc h3{font-family:var(--head);font-size:16px;font-weight:600;text-transform:uppercase;color:#fff;margin:7px 0 12px;letter-spacing:.02em}
+  .ctc a{display:block;font-size:13px;color:var(--muted);line-height:1.85;transition:color .2s;word-break:break-word}
+  .ctc a:hover{color:#fff}
+  .ctc a.tel{font-family:var(--head);font-size:15px;font-weight:600;color:#fff;letter-spacing:.04em}
+  .ctc a.tel:hover{color:var(--red)}
+  .cts-central{margin-top:26px;font-size:15px;color:var(--muted);position:relative}
+  .cts-central a{color:#fff}
+  .cts-central a:hover{color:var(--red)}
+  @media(max-width:1000px){.cts{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.cts{grid-template-columns:1fr}}
+
   /* projetos executados (prova social) */
   .proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
   .proj-grid a{position:relative;display:block;aspect-ratio:4/3;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#0d1116}
@@ -227,10 +242,10 @@
   <div class="wrap nav-in">
     <a href="#top" class="logo"><img src="logo-spode-transparente-dark.png" alt="SPODE Soluções Elétricas"></a>
     <nav class="nav-links">
+      <a href="#gente">A Empresa</a>
       <a href="#solucoes">Soluções</a>
       <a href="#projetos">Projetos</a>
       <a href="#cobertura">Filiais</a>
-      <a href="#gente">A Empresa</a>
       <a href="#blog">Blog</a>
       <a href="#contato">Contato</a>
     </nav>
@@ -262,17 +277,17 @@
 <section id="solucoes">
   <div class="wrap">
     <span class="eyebrow reveal">O que fazemos</span>
-    <h2 class="sec-h reveal">Dez soluções, uma <span class="r">energia</span> só.</h2>
+    <h2 class="sec-h reveal">Muitas soluções, uma <span class="r">energia</span> só.</h2>
     <p class="sec-sub reveal">Do painel à subestação, da automação ao combate a incêndio. Engenharia elétrica de ponta a ponta para o agro e a indústria.</p>
     <div class="prod-grid reveal">
       <a href="solucoes/paineis-eletricos.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/1ecad849754c5d308d1986ac79640ee8.jpg" alt="Painéis Elétricos"><span class="edge"></span><div class="pc-in"><span class="ix">01</span><h3>Painéis Elétricos</h3><p>Conforme NBR 5410 e NR-10.</p></div></a>
       <a href="solucoes/instalacoes-eletricas.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/b3fb2d12e05bf015b2c8e5d60c179b3a.jpg" alt="Instalações Elétricas"><span class="edge"></span><div class="pc-in"><span class="ix">02</span><h3>Instalações Elétricas</h3><p>Industriais, dentro das normas.</p></div></a>
       <a href="solucoes/automacao.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/47c68273c123a45b1998cb08dd0cb117.jpg" alt="Automação"><span class="edge"></span><div class="pc-in"><span class="ix">03</span><h3>Automação</h3><p>Reduz a intervenção e a falha humana.</p></div></a>
-      <a href="solucoes/media-tensao.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/c4f26127f871867bcbb02ade5778aeb3.jpg" alt="Média Tensão"><span class="edge"></span><div class="pc-in"><span class="ix">04</span><h3>Média Tensão</h3><p>Soluções completas em energia segura.</p></div></a>
+      <a href="solucoes/aterramento-spda.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/c4f26127f871867bcbb02ade5778aeb3.jpg" alt="Aterramento e SPDA"><span class="edge"></span><div class="pc-in"><span class="ix">04</span><h3>Aterramento e SPDA</h3><p>Evita danos estruturais.</p></div></a>
       <a href="solucoes/projetos-eletricos.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/373f777043b3db841d028383adee3169.jpg" alt="Projetos Elétricos"><span class="edge"></span><div class="pc-in"><span class="ix">05</span><h3>Projetos Elétricos</h3><p>Emissão de ART e registro no CREA.</p></div></a>
       <a href="solucoes/banco-de-capacitores.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/39bfe24ba2ac7a99bef0300525673899.jpg" alt="Banco de Capacitores"><span class="edge"></span><div class="pc-in"><span class="ix">06</span><h3>Banco de Capacitores</h3><p>Evita multas da concessionária.</p></div></a>
       <a href="solucoes/assistencia-tecnica.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/e468bf2ff8291ff3ec5574538769afd9.jpg" alt="Assistência Técnica"><span class="edge"></span><div class="pc-in"><span class="ix">07</span><h3>Assistência Técnica</h3><p>Atendimento ágil em todo o Brasil.</p></div></a>
-      <a href="solucoes/aterramento-spda.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/0d1151ad4b66fb9b34cccbfead6d84c1.jpg" alt="Aterramento e SPDA"><span class="edge"></span><div class="pc-in"><span class="ix">08</span><h3>Aterramento e SPDA</h3><p>Evita danos estruturais.</p></div></a>
+      <a href="solucoes/media-tensao.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/0d1151ad4b66fb9b34cccbfead6d84c1.jpg" alt="Média Tensão"><span class="edge"></span><div class="pc-in"><span class="ix">08</span><h3>Média Tensão</h3><p>Soluções completas em energia segura.</p></div></a>
       <a href="solucoes/modernizacao-de-unidades.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/f335ff5b5e4826fc16df316f0e8fa9e7.png" alt="Modernização de Unidades"><span class="edge"></span><div class="pc-in"><span class="ix">09</span><h3>Modernização de Unidades</h3><p>Aumenta a eficiência operacional.</p></div></a>
       <a href="solucoes/ppci.html" class="prod-card"><img src="https://spode.ind.br/_assets/media/f5964150bd10dea030cc593808890de7.jpg" alt="PPCI"><span class="edge"></span><div class="pc-in"><span class="ix">10</span><h3>PPCI</h3><p>Sistemas de combate a incêndio.</p></div></a>
     </div>
@@ -306,7 +321,7 @@
         <div class="brmap"></div>
         <div class="brmap-grid"></div>
         <div class="mk" style="left:68%;top:21%"><div class="ring"></div><div class="dot"></div><div class="lbl">Paragominas<span>Filial · PA</span></div></div>
-        <div class="mk left" style="left:65%;top:40%"><div class="ring"></div><div class="dot"></div><div class="lbl">Palmas<span>Central · TO</span></div></div>
+        <div class="mk left" style="left:65%;top:40%"><div class="ring"></div><div class="dot"></div><div class="lbl">Palmas<span>Comercial · TO</span></div></div>
         <div class="mk left" style="left:47%;top:46%"><div class="ring"></div><div class="dot"></div><div class="lbl">Sorriso<span>Filial · MT</span></div></div>
         <div class="mk" style="left:72%;top:44%"><div class="ring"></div><div class="dot"></div><div class="lbl">L.E. Magalhães<span>Filial · BA</span></div></div>
         <div class="mk matriz" style="left:52%;top:86%"><div class="ring"></div><div class="dot"></div><div class="lbl">Panambi<span>Matriz · RS</span></div></div>
@@ -338,14 +353,14 @@
     <p class="sec-sub reveal">Fundada em 2011, a SPODE é uma empresa familiar especializada em soluções elétricas e automação para o agronegócio e a indústria. O foco segue o mesmo desde o primeiro dia: qualidade, inovação e relacionamento direto com o cliente.</p>
     <p class="sec-sub reveal" style="margin-top:14px">Com equipe própria de técnicos especializados em cada região e unidades no Pará, na Bahia, no Rio Grande do Sul, no Mato Grosso e no Tocantins, atendemos todo o Brasil com agilidade. Estar perto do cliente encurta o tempo de resposta e reduz o custo logístico de cada atendimento.</p>
     <div class="people reveal">
-      <div class="pcell c-a"><img src="https://spode.ind.br/_assets/media/e69261f27394f7cc3b700e60eb70f4b9.jpg" alt="Equipe SPODE reunida em frente à nova sede da empresa" loading="lazy"><span class="cap">Nossa nova sede</span></div>
-      <div class="pcell c-b"><img src="https://spode.ind.br/_assets/media/660dc2ded7d3746de8a9a58e8a3915b7.jpg" alt="Gestão da SPODE em frente ao letreiro da sede" loading="lazy"><span class="cap">Liderança</span></div>
-      <div class="pcell c-c"><img src="https://spode.ind.br/_assets/media/332c9a1aaebfea86a644d267c8f8e2d4.jpg" alt="Time administrativo da SPODE" loading="lazy"><span class="cap">Administrativo</span></div>
-      <div class="pcell c-d"><img src="https://spode.ind.br/_assets/media/2af212c70c0ddf74741c0d78e6d5d720.jpg" alt="Três técnicos do time de campo da SPODE" loading="lazy"><span class="cap">Time de campo</span></div>
-      <div class="pcell c-e"><img src="https://spode.ind.br/_assets/media/212ddae61856803e848cf6533c9adb6f.jpg" alt="Equipe completa da SPODE reunida na sede" loading="lazy"><span class="cap">Equipe completa</span></div>
-      <div class="pcell c-f"><img src="https://spode.ind.br/_assets/media/66b31ea6dac5c6c510803eecd6d48311.jpg" alt="Equipe de obra da SPODE com capacetes em serviço de campo" loading="lazy"><span class="cap">No campo</span></div>
-      <div class="pcell c-g"><img src="https://spode.ind.br/_assets/video/405268cd73edeb0d49ab10dda3c86f61.jpg" alt="Fachada da filial de Sorriso com a frota adesivada da SPODE" loading="lazy"><span class="cap">Filial Sorriso · MT</span></div>
-      <div class="pcell c-h"><img src="https://spode.ind.br/_assets/video/a6d811ddbbe6ce85753c56b03451f531.jpg" alt="Fachada da filial de Sorriso vista de outro ângulo" loading="lazy"><span class="cap">Frota SPODE</span></div>
+      <div class="pcell c-a"><img src="https://spode.ind.br/_assets/media/e69261f27394f7cc3b700e60eb70f4b9.jpg" alt="Equipe SPODE reunida em frente à nova sede da empresa" loading="lazy"></div>
+      <div class="pcell c-b"><img src="https://spode.ind.br/_assets/media/660dc2ded7d3746de8a9a58e8a3915b7.jpg" alt="Gestão da SPODE em frente ao letreiro da sede" loading="lazy"></div>
+      <div class="pcell c-c"><img src="https://spode.ind.br/_assets/media/332c9a1aaebfea86a644d267c8f8e2d4.jpg" alt="Time administrativo da SPODE" loading="lazy"></div>
+      <div class="pcell c-d"><img src="https://spode.ind.br/_assets/media/2af212c70c0ddf74741c0d78e6d5d720.jpg" alt="Três técnicos do time de campo da SPODE" loading="lazy"></div>
+      <div class="pcell c-e"><img src="https://spode.ind.br/_assets/media/212ddae61856803e848cf6533c9adb6f.jpg" alt="Equipe completa da SPODE reunida na sede" loading="lazy"></div>
+      <div class="pcell c-f"><img src="https://spode.ind.br/_assets/media/66b31ea6dac5c6c510803eecd6d48311.jpg" alt="Equipe de obra da SPODE com capacetes em serviço de campo" loading="lazy"></div>
+      <div class="pcell c-g"><img src="https://spode.ind.br/_assets/video/405268cd73edeb0d49ab10dda3c86f61.jpg" alt="Fachada da filial de Sorriso com a frota adesivada da SPODE" loading="lazy"></div>
+      <div class="pcell c-h"><img src="https://spode.ind.br/_assets/video/a6d811ddbbe6ce85753c56b03451f531.jpg" alt="Fachada da filial de Sorriso vista de outro ângulo" loading="lazy"></div>
     </div>
     <div class="mvv reveal">
       <div class="mcard"><div class="t">Missão</div><p>Agregar valor aos negócios dos clientes por meio de soluções inteligentes, gerando resultado para a empresa e os colaboradores.</p></div>
@@ -362,19 +377,19 @@
     <p class="sec-sub reveal">Artigos diretos sobre energia, automação e proteção elétrica, escritos para o produtor rural e o gestor industrial.</p>
     <div class="blog-grid reveal">
       <a class="bcard" href="blog/subestacoes-media-tensao-agro.html">
-        <div class="bimg"><img src="https://spode.ind.br/_assets/media/2af212c70c0ddf74741c0d78e6d5d720.jpg" alt="Técnicos da SPODE em atendimento de campo" loading="lazy"></div>
+        <div class="bimg"><img src="https://spode.ind.br/_assets/media/475f868681024bc166f49d1018eb11bf.jpg" alt="Subestação executada pela SPODE" loading="lazy"></div>
         <div class="bbody"><h3>Subestações e média tensão no agro: o que sua unidade precisa saber</h3><p>Quando a subestação própria vira necessidade, como dimensionar em kVA e como aprovar o projeto na concessionária.</p><span class="more">Ler artigo →</span></div>
       </a>
       <a class="bcard" href="blog/paineis-eletricos-nbr-5410.html">
-        <div class="bimg"><img src="https://spode.ind.br/_assets/media/e69261f27394f7cc3b700e60eb70f4b9.jpg" alt="Equipe SPODE em frente à nova sede da empresa" loading="lazy"></div>
+        <div class="bimg"><img src="https://spode.ind.br/_assets/media/717ba6cbf48b3a39b22d0dedffbd1672.jpg" alt="Painel elétrico montado pela SPODE" loading="lazy"></div>
         <div class="bbody"><h3>Painéis elétricos bem dimensionados: segurança e economia com a NBR 5410</h3><p>QGBT organizado, fator de potência corrigido e manutenção em dia: menos risco e menos multa na fatura.</p><span class="more">Ler artigo →</span></div>
       </a>
       <a class="bcard" href="blog/automacao-armazenagem-graos.html">
-        <div class="bimg"><img src="https://spode.ind.br/_assets/video/405268cd73edeb0d49ab10dda3c86f61.jpg" alt="Fachada da filial de Sorriso com a frota da SPODE" loading="lazy"></div>
+        <div class="bimg"><img src="https://spode.ind.br/_assets/media/77f74735377a80bde445ec6d78528be3.jpg" alt="Automação de unidade de armazenagem pela SPODE" loading="lazy"></div>
         <div class="bbody"><h3>Automação de unidades de armazenagem: menos falha humana, mais grão protegido</h3><p>CLP, supervisório e termometria trabalhando juntos para tirar o improviso da rotina e proteger o grão armazenado.</p><span class="more">Ler artigo →</span></div>
       </a>
       <a class="bcard" href="blog/aterramento-spda-protecao-raios.html">
-        <div class="bimg"><img src="https://spode.ind.br/_assets/media/66b31ea6dac5c6c510803eecd6d48311.jpg" alt="Equipe de obra da SPODE com capacetes em campo" loading="lazy"></div>
+        <div class="bimg"><img src="https://spode.ind.br/_assets/media/5df9ca0a6b9c2222fcc6915191fd5c6f.jpg" alt="Sistema de aterramento e SPDA instalado pela SPODE" loading="lazy"></div>
         <div class="bbody"><h3>Aterramento e SPDA: proteção real contra raios no campo</h3><p>O que a NBR 5419 exige, por que silos atraem raios e como a inspeção periódica mantém a proteção viva.</p><span class="more">Ler artigo →</span></div>
       </a>
     </div>
@@ -387,6 +402,14 @@
     <h2 class="reveal">Vamos <span class="r">energizar</span> o seu projeto?</h2>
     <p class="reveal">Fale com um consultor Spode e receba um orçamento sob medida para a sua operação.</p>
     <a href="https://wa.me/5555996027332" target="_blank" rel="noopener" class="btn btn-red reveal">Fale com a SPODE</a>
+
+    <div class="cts reveal">
+      <div class="ctc"><span class="role">Sócio proprietário</span><h3>Fernando Spode</h3><a class="tel" href="tel:+5555996742448">(55) 9 9674-2448</a><a href="mailto:fernando@spode.ind.br">fernando@spode.ind.br</a></div>
+      <div class="ctc"><span class="role">Sócio proprietário</span><h3>Roberto Spode</h3><a class="tel" href="tel:+5555984090295">(55) 9 8409-0295</a><a href="mailto:roberto@spode.ind.br">roberto@spode.ind.br</a></div>
+      <div class="ctc"><span class="role">Diretor comercial</span><h3>Selvino Malheiros</h3><a class="tel" href="tel:+5548991463329">(48) 9 9146-3329</a><a href="mailto:selvino.malheiros@spode.ind.br">selvino.malheiros@spode.ind.br</a></div>
+      <div class="ctc"><span class="role">Todo o Brasil</span><h3>Assistência Técnica</h3><a class="tel" href="tel:+5555999816243">(55) 9 9981-6243</a><a href="mailto:carlos@spode.ind.br">carlos@spode.ind.br</a></div>
+    </div>
+    <p class="cts-central reveal">Central de atendimento · <a href="https://wa.me/5555996027332" target="_blank" rel="noopener">WhatsApp (55) 9 9602-7332</a> · <a href="mailto:contato@spode.ind.br">contato@spode.ind.br</a></p>
   </div>
 </section>
 
